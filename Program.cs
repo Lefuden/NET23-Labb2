@@ -10,6 +10,8 @@ namespace ChessBoard
             Console.WriteLine("Hur stort ska shackbrädan vara? Ange ett heltal mellan 2 - 50.");
             
             int size;
+            string board = "";
+
             //Take user input, with error handling by running a loop until conditions are met.
             //User input needs to be an integer and within specified range.
             while (true)
@@ -20,12 +22,26 @@ namespace ChessBoard
                 {
                     break;
                 }
+                Console.Clear();
                 Console.WriteLine("Felaktigt värde, ange ett heltal mellan 2 - 50.");
             }
-            
-            string black = "□ ";
-            string white = "■ ";
-            string board = "";
+
+            //Let user decide on shape, or leave it blank for default value.
+            Console.WriteLine("Hur ska svarta rutor se ut? Tryck Enter om du vill ha en svart ruta.");
+            Console.Write("> ");
+            string black = Console.ReadLine();
+            if (black == "")
+            {
+                black = "□ ";
+            }
+
+            Console.WriteLine("Hur ska vita rutor se ut? Tryck Enter om du vill ha en vit ruta.");
+            Console.Write("> ");
+            string white = Console.ReadLine();
+            if (white == "")
+            {
+                white = "■ ";
+            }
 
             //create nested for-loops to count and compare amount of output required.
             for (int y = 0; y < size; y++)
