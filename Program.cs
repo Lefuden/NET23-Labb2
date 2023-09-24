@@ -27,7 +27,7 @@ namespace ChessBoard
             }
 
             //Let user decide on shape, or leave it blank for default value.
-            Console.WriteLine("Hur ska svarta rutor se ut? Tryck Enter om du vill ha en svart ruta.");
+            Console.WriteLine("Hur ska svarta rutor se ut? Tryck Enter om du inte vill välja.");
             Console.Write("> ");
             string black = Console.ReadLine();
             if (black == "")
@@ -35,7 +35,7 @@ namespace ChessBoard
                 black = "□ ";
             }
 
-            Console.WriteLine("Hur ska vita rutor se ut? Tryck Enter om du vill ha en vit ruta.");
+            Console.WriteLine("Hur ska vita rutor se ut? Tryck Enter om du inte vill välja.");
             Console.Write("> ");
             string white = Console.ReadLine();
             if (white == "")
@@ -62,9 +62,9 @@ namespace ChessBoard
                 board += "\n";
             }
             //output the completed chessboard.
-            Console.WriteLine(board);
+            Console.WriteLine($"\n{board}");
         }
     }
 }
-//I'll keep this here for posterity. Was fun tinkering, and it works!
-//for (int x = 0; x < number; x++) board += ((x + y) % 2 == 0 ? white : black);
+//I'll keep this here for posterity. Was fun tinkering, and it works! This would replace the for-loop at line 50 to 60.
+//for (int x = 0; x < size; x++) board += ((x + y) % 2 == 0 ? white : black);
